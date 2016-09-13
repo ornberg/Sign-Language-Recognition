@@ -15,7 +15,7 @@ In the command line type
 ```
 python Builder.py
 ```
-and start building your dataset. Click 'Record' for fixed signs, and hold to record a sequence of frames for gesture based signs. I'd usually stick to 20 samples per class as it was the lowest number with the highest gain in accuracy (and because I'm lazy).
+and start building your dataset. Click 'Record' for fixed signs, and hold to record a sequence of frames for gesture based signs. I'd usually stick to 20 samples per class as it was the lowest number with the highest gain in accuracy (and because I'm lazy), but obviously, the more the better.
 
 To test the actual recognition, run
 ```
