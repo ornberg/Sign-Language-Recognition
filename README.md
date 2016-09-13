@@ -20,7 +20,7 @@ To test the actual recognition, run
 ```
 python Intepreter.py
 ```
-Depending on how similar the motions things should work quite okay.
+Depending on how similar the gestures are things should work quite okay, although it probably should go without mentioning that the success rate is at the mercy at the sensors ability to capture your gestures correctly.
 Novel detection is a little wonky at the moment. It straightforwardly disregards any result that is further away from the average datapoint by more than 85% of the distance between the average and furthest from average datapoint.
 
 The accompanying PDF is the paper/report I wrote, which was the only element assessed, and contains details on the overall approach and code overview. If you've read everything else there is to read on the internet, go read that.
