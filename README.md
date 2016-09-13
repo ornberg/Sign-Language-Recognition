@@ -3,6 +3,7 @@ O'hoy, this is was my final year project of my BSc in CS at Lancaster.
 In short it is: a gesture recognition system, using the Leap Motion Sensor, Python and a basic self-implemented Naive Bayes classifier.
 
 ## Dependencies
+* Python 2.7 
 * Leap Motion SDK which you can download at https://developer.leapmotion.com/v2, from where the following three files need to reside in the same folder
  * Leap.py
  * LeapPython.so
