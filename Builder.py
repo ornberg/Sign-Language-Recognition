@@ -196,8 +196,11 @@ class GUI:
 
 	def signsListBoxSelect(self, event):
 		selected = event.widget.curselection()
+
+		# Set current sign to the corresponding selected list items
 		if len(selected) > 0:
-			self.currentSign = self.dataset[selected[0]]
+			# old Tkinter versions might return strings, therefore int conversion
+			self.currentSign = self.dataset[int(selected[0])]
 		self.updateSamplesList()
 
 
