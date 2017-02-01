@@ -8,7 +8,7 @@ In short it is: a gesture recognition system, using the Leap Motion Sensor, Pyth
  * Leap.py
  * LeapPython.so
  * libLeap.dylib
- * NB: Only tested with Tkinter 8.5
+* NB: Only tested with Tkinter 8.5
  
 ## Run!
 Make sure your Leap Motion is connected, that the Leap Motion deamon is running and your plants have been watered.
