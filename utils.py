@@ -104,8 +104,7 @@ def validateVector(vector):
 	were the NB Classifier might get a 0 variance per feature, in turn
 	causing a math domain error when doing log(0)
 	'''
-	for keyframe in vector:
-		for feature in keyframe:
-			if not feature:
-				return False
+	for feature in vector:
+		if not feature:
+			return False
 	return True
