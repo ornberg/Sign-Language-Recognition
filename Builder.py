@@ -208,7 +208,7 @@ class GUI:
 			elif len(self.vectorBuffer) >= 10:
 				vector = utils.vectorize(self.vectorBuffer, fixed=False)
 				if utils.validateVector(vector):
-					self.currentSign.samples.append()
+					self.currentSign.samples.append(vector)
 
 			else:
 				tkMessageBox.showwarning('','Too few frames recorded. Try again')
