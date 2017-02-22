@@ -8,18 +8,19 @@ In short it is: a gesture recognition system, using the Leap Motion Sensor, Pyth
  * Leap.py
  * LeapPython.so
  * libLeap.dylib
-**NB** I've developed and only tested this project on a macOS environment, so things might go wonky on other platforms.
+ 
+**NB:** I've developed and only tested this project on a macOS environment, so things might go wonky on other platforms.
  
 ## Run!
 Make sure your Leap Motion is connected, that the Leap Motion deamon is running and your plants have been watered.
 In the command line type
-```
+```bash
 python Builder.py
 ```
 and start building your dataset. Create a new sign and set type. Click 'Record' for fixed signs, and hold to record a sequence of frames for gesture based signs. I'd usually stick to 20 samples per class as it was the lowest number with the highest gain in accuracy (and because I'm lazy), but obviously, the more the better.
 
 To test the actual recognition, run
-```
+```bash
 python Intepreter.py
 ```
 Depending on how similar the gestures are things should work quite okay, although it probably should go without mentioning that the success rate is at the mercy at the sensors ability to capture your gestures correctly.
