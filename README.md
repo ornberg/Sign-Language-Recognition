@@ -9,7 +9,7 @@ In short it is: a gesture recognition system, using the Leap Motion Sensor, Pyth
  * LeapPython.so
  * libLeap.dylib
  
-**NB:** I've developed and only tested this project on a macOS environment, so things might go wonky on other platforms.
+**NB:** I've only developed and tested this project in a macOS environment, so things might go wonky on other platforms.
  
 ## Run!
 Make sure your Leap Motion is connected, that the Leap Motion deamon is running and your plants have been watered.
