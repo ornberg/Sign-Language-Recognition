@@ -98,13 +98,12 @@ def compress(_buffer, size):
 	return output
 
 
-def validateVector(vector):
+def validateFeatures(samples):
 	'''
-	Check that all values in vector are non-zero, to catch any future errors
-	were the NB Classifier might get a 0 variance per feature, in turn
-	causing a math domain error when doing log(0)
+	Check that each feature across samples are not 0, to avoid a
+	feature variance of 0, in turn causing a math domain error when doing log(0)
 	'''
-	for feature in vector:
-		if not feature:
+	for feature in zip(*samples):
+		if not sum(feature):
 			return False
 	return True

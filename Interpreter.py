@@ -64,6 +64,14 @@ class GUI:
 		fixed, gestures = [], []
 		for sign in dataset:
 			if len(sign.samples) >= 2:
+				# If zero found across features, skip that sign
+				if not utils.validateFeatures(sign.samples):
+					self.master.update()
+					tkMessageBox.showwarning('', \
+					"Found non-zero values in sign named '" + sign.value \
+					+ "', delete your samples and try re-record them with 'Builder.py'")
+					exit()
+
 				if sign.type == 'Fixed':
 					for sample in sign.samples:
 						# Filter out samples of invalid length

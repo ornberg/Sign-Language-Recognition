@@ -199,19 +199,23 @@ class GUI:
 
 			# If sign recorded was fixed/static and has at least one frame
 			if self.currentSign.type == 'Fixed' and len(self.vectorBuffer):
-				vector = utils.vectorize(self.vectorBuffer, fixed=True)
-				if utils.validateVector(vector):
-					self.currentSign.samples.append(vector)
+				self.currentSign.samples.append(utils.vectorize(self.vectorBuffer, fixed=True))
 
 			# Make sure we have enough frames to create 10 keyframes for
 			# gestures signs
 			elif len(self.vectorBuffer) >= 10:
-				vector = utils.vectorize(self.vectorBuffer, fixed=False)
-				if utils.validateVector(vector):
-					self.currentSign.samples.append(vector)
+				self.currentSign.samples.append((self.vectorBuffer, fixed=False))
 
+			# Not enough frames were recorded, return before making changes
 			else:
-				tkMessageBox.showwarning('','Too few frames recorded. Try again')
+				tkMessageBox.showwarning('', 'Too few frames recorded. Try again')
+				return
+
+			# Check that features across all samples are non-zero
+			if len(self.currentSign.samples) >= 2:
+				if not utils.validateFeatures(self.currentSign.samples):
+					tkMessageBox.showwarning('', \
+						'Zero-values recorded from sensor. Delete samples for current sign and try again')
 
 			# Just to be safe, update dataset file despite not exiting program
 			pickle.dump(self.dataset, open('dataset.p', 'wb'))
